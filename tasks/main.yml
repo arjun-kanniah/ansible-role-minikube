@@ -1,6 +1,6 @@
 ---
 - name: Ensure systemctl is installed (Download Script).
-  ansible.builtin.git:
+  git:
     repo: '{{ systemctl_repo_url }}'
     dest: '{{ systemctl_script_dir }}'
     version: master
