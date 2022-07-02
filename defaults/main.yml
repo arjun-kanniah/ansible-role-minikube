@@ -1,6 +1,7 @@
 ---
 systemctl_repo_url: "https://github.com/DamionGans/ubuntu-wsl2-systemd-script.git"
 systemctl_script_dir_path: ''
+systemctl_script_dir: "{{ systemctl_script_dir_path }}/ubuntu-wsl2-systemd-script"
 
 minikube_bin_path: /usr/local/bin
 minikube_installer_url: "https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64"

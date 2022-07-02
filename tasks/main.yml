@@ -2,12 +2,12 @@
 - name: Ensure systemctl is installed (Download Script).
   ansible.builtin.git:
     repo: '{{ systemctl_repo_url }}'
-    dest: '{{ systemctl_script_dir_path }}'
+    dest: '{{ systemctl_script_dir }}'
     version: master
 
 - name: Ensure systemctl is installed (Execute Script).
   ansible.builtin.script:
-    cmd: "{{ systemctl_script_dir_path }}/ubuntu-wsl2-systemd-script/ubuntu-wsl2-systemd-script"
+    cmd: "{{ systemctl_script_dir }}/ubuntu-wsl2-systemd-script/ubuntu-wsl2-systemd-script"
   args:
     executable: /bin/bash
 
