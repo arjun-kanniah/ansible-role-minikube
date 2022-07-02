@@ -1,0 +1,44 @@
+---
+- name: Ensure systemctl is installed (Download Script).
+  ansible.builtin.git:
+    repo: '{{ systemctl_repo_url }}'
+    dest: '{{ systemctl_script_dir_path }}'
+    version: master
+
+- name: Ensure systemctl is installed (Execute Script).
+  ansible.builtin.script:
+    cmd: "{{ systemctl_script_dir_path }}/ubuntu-wsl2-systemd-script/ubuntu-wsl2-systemd-script"
+  args:
+    executable: /bin/bash
+
+- name: Ensure conntrack is installed.
+  ansible.builtin.package:
+    name: conntrack
+    state: present
+
+- name: Install minikube (Download installer).
+  ansible.builtin.get_url:
+    url: "{{ minikube_installer_url }}"
+    dest: "{{ minikube_bin_path }}/minikube"
+    mode: 0755
+
+- name: Set minikube driver
+  ansible.builtin.shell: |
+    set timeout 10
+    minikube config set driver docker
+  args:
+    executable: /bin/bash
+
+- name: Install kubectl
+  ansible.builtin.get_url:
+    url: "{{ kubectl_installer_url }}"
+    dest: "{{ kubectl_bin_path }}/kubectl"
+    mode: 0755
+
+- name: Set kubectl context
+  ansible.builtin.shell: |
+    set timeout 10
+    kubectl config use-context minikube
+  args:
+    executable: /bin/bash
+  
