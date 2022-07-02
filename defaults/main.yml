@@ -1,5 +1,5 @@
 ---
-systemctl_repo_url: "https://github.com/DamionGans/ubuntu-wsl2-systemd-script.git"
+systemctl_repo_url: "https://github.com/arjun-kanniah/ubuntu-wsl2-systemd-script.git"
 systemctl_script_dir_path: ''
 systemctl_script_dir: "{{ systemctl_script_dir_path }}/ubuntu-wsl2-systemd-script"
 
