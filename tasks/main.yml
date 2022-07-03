@@ -4,10 +4,12 @@
     repo: '{{ systemctl_repo_url }}'
     dest: '{{ systemctl_script_dir }}'
     version: master
+    mode: 0755
 
 - name: Ensure systemctl is installed (Execute Script).
   ansible.builtin.script:
     cmd: "{{ systemctl_script_dir }}/ubuntu-wsl2-systemd-script/ubuntu-wsl2-systemd-script"
+    remote_src: yes
   args:
     executable: /bin/bash
 
