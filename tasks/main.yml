@@ -4,7 +4,6 @@
     repo: '{{ systemctl_repo_url }}'
     dest: '{{ systemctl_script_dir }}'
     version: master
-    mode: 0755
 
 - name: Ensure systemctl is installed (Execute Script).
   ansible.builtin.script:
