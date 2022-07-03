@@ -7,7 +7,7 @@
 
 - name: Ensure systemctl is installed (Execute Script).
   ansible.builtin.script:
-    cmd: "{{ systemctl_script_dir }}/ubuntu-wsl2-systemd-script/ubuntu-wsl2-systemd-script"
+    cmd: "{{ systemctl_script_dir }}/ubuntu-wsl2-systemd-script.sh"
     remote_src: yes
   args:
     executable: /bin/bash
