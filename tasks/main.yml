@@ -29,6 +29,13 @@
     minikube config set driver docker
   args:
     executable: /bin/bash
+    
+- name: Start minikube
+  ansible.builtin.shell: |
+    set timeout 20
+    minikube start
+  args:
+    executable: /bin/bash
 
 - name: Install kubectl
   ansible.builtin.get_url:
