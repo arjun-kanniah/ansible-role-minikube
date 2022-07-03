@@ -36,6 +36,7 @@
     minikube start
   args:
     executable: /bin/bash
+  become_user: '{{ minikube_user }}'
 
 - name: Install kubectl
   ansible.builtin.get_url:
