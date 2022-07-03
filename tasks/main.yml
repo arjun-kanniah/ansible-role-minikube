@@ -50,4 +50,5 @@
     kubectl config use-context minikube
   args:
     executable: /bin/bash
+  become_user: '{{ minikube_user }}'
   
