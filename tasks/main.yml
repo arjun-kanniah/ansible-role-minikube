@@ -32,8 +32,9 @@
     
 - name: Start minikube
   ansible.builtin.shell: |
+    newgrp docker
     set timeout 20
-    minikube start
+    minikube start --driver=docker
   args:
     executable: /bin/bash
   become_user: '{{ minikube_user }}'
