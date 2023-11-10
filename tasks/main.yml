@@ -44,6 +44,7 @@
     url: "{{ kubectl_installer_url }}"
     dest: "{{ kubectl_bin_path }}/kubectl"
     mode: 0755
+    validate_certs: no
 
 - name: Set kubectl context
   ansible.builtin.shell: |
